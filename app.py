@@ -13,7 +13,7 @@ def tela_inicial():
     print('1. Cadastrar Restaurante')
     print('2. Listar Restaurante')
     print('3. Ativar Restaurante')
-    print('4. Sai')
+    print('4. Sair')
     
     while (1):
         #Pegando dados do usuário
