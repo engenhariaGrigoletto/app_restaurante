@@ -1,4 +1,5 @@
-intervalo_opcoes_inicial = [1,4]
+intervalo_opcoes_inicial = [1,2,3,4]
+restaurantes = []
 
 def tela_inicial():
     #Mensagens da tela inicial
@@ -30,11 +31,30 @@ def opcoes_inicial():
         except:
             print('\nInforme um valor válido!')
             continue
+    return escolha_usuario
+
+def chama_funcoes(escolhido):
+
+    if escolhido==intervalo_opcoes_inicial[0]:
+        cadastrar_restaurante()
+    else:
+        print("Não foi criado ainda")
     
+def cadastrar_restaurante():
+    nome_restaurante = input("\nInforme o nome do restaurante:")
+    categoria_restaurante = input("\nInforme a categoria do restaurante:")
+    
+    cadastro_restaurante = {'nome':nome_restaurante,'categoria':categoria_restaurante,'ativo':False}
+    restaurantes.append(cadastro_restaurante)
+    print("Restaurante cadastrado com sucesso!")
+    print(restaurantes)
+
 
 def main():
     tela_inicial()
-    opcoes_inicial()
+    escolha_usuario = opcoes_inicial()
+    chama_funcoes(escolha_usuario)
+
 
 #Verificação se a função está dentro do arquivo
 if __name__ == '__main__':
