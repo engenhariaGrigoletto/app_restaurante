@@ -1,4 +1,4 @@
-
+intervalo_opcoes_inicial = [1,4]
 
 def tela_inicial():
     #Mensagens da tela inicial
@@ -15,12 +15,14 @@ def tela_inicial():
     print('3. Ativar Restaurante')
     print('4. Sair')
     
+
+def opcoes_inicial():   
     while (1):
         #Pegando dados do usuário
         try:
             escolha_usuario = int(input('\nEscolha uma das opções acima:'))
 
-            if escolha_usuario>=1 and escolha_usuario<=4:
+            if escolha_usuario>=min(intervalo_opcoes_inicial) and escolha_usuario<=max(intervalo_opcoes_inicial):
                 break
             else:
                 print('\nInforme um valor dentro do intervalo!')
@@ -32,6 +34,7 @@ def tela_inicial():
 
 def main():
     tela_inicial()
+    opcoes_inicial()
 
 #Verificação se a função está dentro do arquivo
 if __name__ == '__main__':
