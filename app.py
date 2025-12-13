@@ -49,8 +49,10 @@ def cadastrar_restaurante():
     print("Restaurante cadastrado com sucesso!")
     print(restaurantes)
 
+<<<<<<< HEAD
 
 def 
+
 
 def main():
     tela_inicial()
