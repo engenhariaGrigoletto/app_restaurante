@@ -1,3 +1,5 @@
+import os
+
 intervalo_opcoes_inicial = [1,2,3,4]
 restaurantes = []
 
@@ -37,10 +39,13 @@ def chama_funcoes(escolhido):
 
     if escolhido==intervalo_opcoes_inicial[0]:
         cadastrar_restaurante()
+    elif escolhido==intervalo_opcoes_inicial[1]:
+        listar_restaurante()
     else:
-        print("Não foi criado ainda")
+        print('Ainda não foi criada essa função')
     
 def cadastrar_restaurante():
+    os.system('cls')
     nome_restaurante = input("\nInforme o nome do restaurante:")
     categoria_restaurante = input("\nInforme a categoria do restaurante:")
     
@@ -48,11 +53,18 @@ def cadastrar_restaurante():
     restaurantes.append(cadastro_restaurante)
     print("Restaurante cadastrado com sucesso!")
     print(restaurantes)
+    main()
 
-<<<<<<< HEAD
+def listar_restaurante():
+    os.system('cls')
+    print(f'{'Nome'.ljust(25)} | {'Categoria'.ljust(25)} | {'status'.ljust(25)}')
+    for restaurante in restaurantes:
+        nome = restaurante['nome']
+        categoria = restaurante['categoria']
+        status = 'Ativado' if restaurante['ativo'] else 'Desativado'
 
-def 
-
+        print(f'{nome.ljust(25)} | {categoria.ljust(25)} | {status.ljust(25)}')
+    main()
 
 def main():
     tela_inicial()
