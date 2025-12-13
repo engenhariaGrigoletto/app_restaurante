@@ -50,6 +50,8 @@ def cadastrar_restaurante():
     print(restaurantes)
 
 
+def 
+
 def main():
     tela_inicial()
     escolha_usuario = opcoes_inicial()
